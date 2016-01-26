@@ -1,0 +1,11 @@
+<div id="controls" class="col-md-2">
+    <div class="list-group">
+        <% series.each(function(series) { %>
+        <a href="<%- series.get('id') %>" class="list-group-item <% if (series.get('show')) { %><%- series.get('id') %><% } %>">
+                <%- series.get('name') %>
+            </a>
+        <% }) %>
+    </div>
+</div>
+<div id="chart" class="col-md-10">
+</div>

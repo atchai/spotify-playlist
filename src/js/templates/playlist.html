@@ -1,0 +1,21 @@
+<div class="page-header">
+    <h1><%- playlist.get('name') %></h1>
+</div>
+<div id="visualisation" class="row"></div>
+<div class="row">
+    <table class="table table-striped">
+        <thead>
+            <tr><th>Title</th><th>Artist</th><th>Album</th><th>Length</th></tr>
+        </thead>
+        <tbody>
+            <% playlist.tracks.each(function(track) { %>
+                <tr>
+                    <td><%- track.get('name') %></td>
+                    <td><%- track.getArtists() %></td>
+                    <td><%- track.getAlbum() %></td>
+                    <td><%- track.getLength() %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</div>

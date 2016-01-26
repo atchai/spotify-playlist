@@ -1,0 +1,22 @@
+<div class="page-header">
+    <h1>Select a Playlist</h1>
+</div>
+<div class="row">
+    <div class="list-group">
+        <% playlists.each(function(playlist) { %>
+            <a href="<%- playlist.getUrl() %>" class="list-group-item">
+                <span class="badge"><%- playlist.getNumTracks() %> Tracks</span>
+                <% var thumbnail = playlist.getThumbnail() %>
+                <% if (thumbnail) { %>
+                    <img src="<%- thumbnail %>" width="60" height="60">
+                <% } else { %>
+                    <span class="glyphicon glyphicon-music default-thumbnail"></span>
+                <% } %>
+                <span class="playlist-title">
+                    <%- playlist.get('name') %>
+                </span>
+                <%- playlist.getOwner() %>
+            </a>
+        <% }) %>
+    </div>
+</div>
